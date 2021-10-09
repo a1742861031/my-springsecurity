@@ -3,6 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bobo.myspringsecurity.admin.dao.UserDao">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
+       insert into my_user(dept_id,user_name, password, nick_name, phone, email, status, create_time, update_time) values(#{deptId},#{userName}, #{password}, #{nickName}, #{phone}, #{email}, #{status}, now(), now())
+    </insert>
 
 
     <select id="getUserList" resultType="com.bobo.myspringsecurity.admin.entity.MyUser">

@@ -34,15 +34,36 @@ public class UserController {
         MyUser user = userService.getUserById(id);
         return Result.ok().data("item", user);
     }
+
     @PutMapping()
     @ApiOperation(value = "修改用户")
-    public Result<Object> updateUser(@RequestBody MyUser user){
+    public Result<Object> updateUser(@RequestBody MyUser user) {
         boolean issuccess = userService.updateUser(user);
-        if(issuccess){
+        if (issuccess) {
             return Result.ok().message("更新用户成功");
-        }
-        else {
+        } else {
             return Result.error().message("更新用户失败");
         }
+    }
+
+    @PostMapping()
+    @ApiOperation(value = "新增用户")
+    public Result<Object> addUser(@RequestBody MyUser user) {
+        boolean isSuccess = userService.addUser(user);
+        if (isSuccess) {
+            return Result.ok().message("新增用户成功");
+        } else {
+            return Result.error().message("新增用户失败");
+        }
+    }
+
+    @DeleteMapping("/{userId}")
+    @ApiOperation(value = "删除用户")
+    public Result<Object> deleteUser(@PathVariable Integer userId) {
+        boolean isSuccess = userService.deleteUser(userId);
+        if (isSuccess) {
+            return Result.ok().message("删除用户成功");
+        }
+        return Result.error().message("删除用户失败");
     }
 }

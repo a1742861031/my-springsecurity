@@ -9,6 +9,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -41,9 +42,31 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public boolean updateUser(MyUser user) {
         roleUserDao.updateRoleUser(user.getRoleId(), user.getUserId());
         userDao.updateUser(user);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean addUser(MyUser user) {
+        user.setPassword("123456");
+        user.setDeptId(1);
+        int insert = userDao.insert(user);
+        if (insert != 0) {
+            roleUserDao.insertRoleUser(user.getRoleId(), user.getUserId());
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    @Transactional
+    public boolean deleteUser(Integer userId) {
+        userDao.deleteUser(userId);
+        roleUserDao.deleteUser(userId);
         return true;
     }
 }

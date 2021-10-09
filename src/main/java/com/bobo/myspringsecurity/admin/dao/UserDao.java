@@ -2,10 +2,7 @@ package com.bobo.myspringsecurity.admin.dao;
 
 import com.bobo.myspringsecurity.admin.dto.MyUserDto;
 import com.bobo.myspringsecurity.admin.entity.MyUser;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -19,6 +16,8 @@ public interface UserDao {
     //更新用户
     int updateUser(MyUser myUser);
     //新增用户
-    @Insert("insert into my_user(dept_id,user_name, password, nick_name, phone, email, status, create_time, update_time) values(#{deptId},#{userName}, #{password}, #{nickName}, #{phone}, #{email}, #{status}, now(), now())")
     int insert(MyUser myUser);
+    //删除用户
+    @Delete("delete from my_user where user_id = #{userId}")
+    int deleteUser(Integer userId);
 }

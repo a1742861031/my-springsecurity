@@ -13,4 +13,7 @@ public interface UserService {
     PageInfo<MyUser> getAllUsersByPage(Integer startPosition, Integer limit, MyUserDto user);
     MyUser getUserById(String userId);
     boolean updateUser(MyUser user);
+    boolean addUser(MyUser user);
+    boolean deleteUser(Integer userId);
+
 }

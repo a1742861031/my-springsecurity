@@ -26,4 +26,5 @@ public class MyMenu extends BaseEntity{
     private String permission;
 
     private Integer sort;
+    private boolean hasChildren = true; //默认情况下 为true
 }

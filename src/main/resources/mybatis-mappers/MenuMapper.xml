@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bobo.myspringsecurity.admin.dao.MenuDao">
+
+
+        <resultMap id="BaseTreeResultMap" type="com.bobo.myspringsecurity.admin.vo.MenuVo">
+            <result column="menu_id" property="menuId"/>
+
+            <collection column="menu_id" property="children" javaType="java.util.ArrayList"
+                        ofType="com.bobo.myspringsecurity.admin.vo.MenuVo" select="getNextNodeTree"/>
+        </resultMap>
+
+        <resultMap id="NextTreeResultMap" type="com.bobo.myspringsecurity.admin.vo.MenuVo">
+            <result column="menu_id" property="menuId"/>
+            <collection column="menu_id" property="children" javaType="java.util.ArrayList"
+                        ofType="com.bobo.myspringsecurity.admin.vo.MenuVo" select="getNextNodeTree"/>
+        </resultMap>
+
+        <select id="getNextNodeTree" resultMap="NextTreeResultMap">
+            SELECT
+                *
+            FROM my_menu
+            WHERE parent_id = #{menuId}
+        </select>
+
+        <select id="getNodeTree" resultMap="BaseTreeResultMap">
+            SELECT
+                *
+            FROM my_menu
+            WHERE parent_id = 0
+        </select>
+
+</mapper>
