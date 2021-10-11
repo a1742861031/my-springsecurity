@@ -41,6 +41,7 @@ spring:
         reset-enable: true
         login-username: admin
         login-password: admin
+
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
@@ -50,6 +51,7 @@ spring:
       enabled: true
       additional-paths: src/main/java
       exclude: WEB-INF/**
+
 #mybatis配置
 mybatis:
   type-aliases-package: com.codermy.myspringsecurityplus.entity
@@ -61,12 +63,12 @@ logging:
   file:
     path: src\main\resources\logger\ # logger文件夹需要提前生成
 
-
-jwt:
-  tokenHeader: Authorization #JWT存储的请求头
-  secret: my-springsecurity-plus #JWT加解密使用的密钥
-  expiration: 604800 #JWT的超期限时间(60*60*24*7)
-  tokenHead: 'Bearer ' #JWT负载中拿到开头
+# 配置jwt
+bobo:
+  jwt:
+    header: Authorization
+    expire: 604800 # 七天过期时间
+    secret: bobo23132135431321561231df31fds354fds
 
 # 分页配置
 pagehelper:

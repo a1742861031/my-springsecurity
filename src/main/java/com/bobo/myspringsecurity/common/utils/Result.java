@@ -1,6 +1,7 @@
 package com.bobo.myspringsecurity.common.utils;
 
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -32,7 +33,8 @@ public class Result<T> implements Serializable {
 
     @ApiModelProperty(value = "返回数据")
     private Map<String, Object> data = new HashMap<String, Object>();
-
+    @ApiModelProperty(value = "jwtToken")
+    private String jwtToken;
     //把构造方法私有
     private Result() {}
 
@@ -72,6 +74,15 @@ public class Result<T> implements Serializable {
     }
     public Result count(Integer count){
         this.count = count;
+        return this;
+    }
+
+    public String getJwtToken() {
+        return jwtToken;
+    }
+
+    public Result setJwtToken(String jwtToken) {
+        this.jwtToken = jwtToken;
         return this;
     }
 }

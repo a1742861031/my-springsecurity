@@ -15,5 +15,4 @@ public interface UserService {
     boolean updateUser(MyUser user);
     boolean addUser(MyUser user);
     boolean deleteUser(Integer userId);
-
 }

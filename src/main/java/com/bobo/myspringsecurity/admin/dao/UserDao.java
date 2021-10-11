@@ -20,4 +20,7 @@ public interface UserDao {
     //删除用户
     @Delete("delete from my_user where user_id = #{userId}")
     int deleteUser(Integer userId);
+    //根据用户名获取用户
+    @Select("select * from my_user where user_name = #{userName}")
+    MyUser getUser(String userName);
 }

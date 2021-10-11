@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.bobo.myspringsecurity.admin.dao.MenuDao">
 
 
@@ -12,24 +13,56 @@
                         ofType="com.bobo.myspringsecurity.admin.vo.MenuVo" select="getNextNodeTree"/>
         </resultMap>
 
-        <resultMap id="NextTreeResultMap" type="com.bobo.myspringsecurity.admin.vo.MenuVo">
-            <result column="menu_id" property="menuId"/>
-            <collection column="menu_id" property="children" javaType="java.util.ArrayList"
-                        ofType="com.bobo.myspringsecurity.admin.vo.MenuVo" select="getNextNodeTree"/>
-        </resultMap>
+    <resultMap id="NextTreeResultMap" type="com.bobo.myspringsecurity.admin.vo.MenuVo">
+        <result column="menu_id" property="menuId"/>
+        <collection column="menu_id" property="children" javaType="java.util.ArrayList"
+                    ofType="com.bobo.myspringsecurity.admin.vo.MenuVo" select="getNextNodeTree"/>
+    </resultMap>
+    <update id="updateMenu">
+        update my_menu
+        <set>
+            <if test="parentId != null">
+                parent_id = #{parentId},
+            </if>
+            <if test="menuName != null">
+                menu_name = #{menuName},
+            </if>
+            <if test="icon != null">
+                icon = #{icon},
+            </if>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="permission != null">
+                permission = #{permission},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            update_time = now()
+        </set>
+        where menu_id = #{menuId}
+    </update>
 
-        <select id="getNextNodeTree" resultMap="NextTreeResultMap">
-            SELECT
-                *
-            FROM my_menu
-            WHERE parent_id = #{menuId}
-        </select>
 
-        <select id="getNodeTree" resultMap="BaseTreeResultMap">
-            SELECT
-                *
-            FROM my_menu
-            WHERE parent_id = 0
-        </select>
+    <select id="getNextNodeTree" resultMap="NextTreeResultMap">
+        SELECT *
+        FROM my_menu
+        WHERE parent_id = #{menuId}
+    </select>
+
+    <select id="getNodeTree" resultMap="BaseTreeResultMap">
+        SELECT *
+        FROM my_menu
+        WHERE parent_id = 0
+    </select>
+    <insert id="addMenu" useGeneratedKeys="true" keyProperty="menuId" keyColumn="menu_id">
+        insert into my_menu(menu_name, parent_id, icon, url,permission, sort, type, create_time, update_time)
+        values (#{menuName}, #{parentId}, #{icon,jdbcType=NUMERIC}, #{url,jdbcType=NUMERIC},
+                #{permission,jdbcType=NUMERIC}, #{sort}, #{type}, now(), now());
+    </insert>
 
 </mapper>

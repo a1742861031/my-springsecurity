@@ -1,20 +1,19 @@
 package com.bobo.myspringsecurity.admin.controller;
 
+import com.bobo.myspringsecurity.admin.dto.MenuIndexDto;
 import com.bobo.myspringsecurity.admin.entity.MyMenu;
 import com.bobo.myspringsecurity.admin.service.MenuService;
 import com.bobo.myspringsecurity.admin.vo.MenuVo;
 import com.bobo.myspringsecurity.common.utils.Result;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
- * @Description TODO
+ * @Description 菜单控制器
  * @Date 2021/10/8 18:36
  * @Created by bobo
  */
@@ -45,4 +44,56 @@ public class MenuController {
         }
         return Result.ok().data("result", result);
     }
+
+    //添加菜单
+    @PostMapping()
+    @ApiOperation("添加菜单")
+    public Result<Object> addMenu(@RequestBody MyMenu menu) {
+        boolean isSuccess = menuService.addMenu(menu);
+        if (isSuccess) {
+            return Result.ok().message("新增菜单成功");
+        } else {
+            return Result.error().message("新增菜单失败");
+        }
+    }
+
+    //获取菜单信息
+    @GetMapping("/menuInfo/{menuId}")
+    @PreAuthorize("hasAnyAuthority('menu:edit')")
+    @ApiOperation("获取菜单信息")
+    public Result<Object> getMenuInfo(@PathVariable Integer menuId) {
+        MyMenu menu = menuService.getMenuInfo(menuId);
+        return Result.ok().data("menu", menu);
+    }
+
+    //更新菜单信息
+    @PutMapping()
+    @ApiOperation("修改菜单信息")
+    public Result<Object> updateMenu(@RequestBody MyMenu menu) {
+        boolean isSuccess = menuService.updateMenuInfo(menu);
+        if (isSuccess) {
+            return Result.ok().message("更新菜单成功");
+        } else {
+            return Result.error().message("更新菜单失败");
+        }
+    }
+
+    @DeleteMapping("{menuId}")
+    @ApiOperation("删除菜单信息")
+    public Result<String> deleteMenu(@PathVariable Integer menuId) {
+        boolean isSuccess = menuService.deleteMenu(menuId);
+
+        if (isSuccess) {
+            return Result.ok().message("删除菜单成功");
+        } else {
+            return Result.error().message("删除菜单失败");
+        }
+    }
+    @GetMapping(value = "/index/{userId}")
+    @ResponseBody
+    @ApiOperation(value = "通过用户id获取菜单")
+    public List<MenuIndexDto> getMenu(@PathVariable  Integer userId) {
+        return menuService.getMenu(userId);
+    }
+
 }
