@@ -38,7 +38,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     JwtAccessDeniedHandler accessDeniedHandler;
     @Autowired
     private UserDetailsService userDetailsService;
-
+    @Autowired
+    private JwtLogoutSuccessHandler jwtLogoutSuccessHandler;
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

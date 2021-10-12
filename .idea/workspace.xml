@@ -5,35 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd624ea-b6d8-4589-a6c2-31d08e8ef6b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_whvcse_easy_captcha_1_6_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/dao/MenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/dao/MenuDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/service/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/service/RoleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/admin/service/impl/MenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/exceptionhandler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/handler/exceptionhandler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/exceptionhandler/MyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/handler/exceptionhandler/BoboException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/utils/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/utils/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bobo/myspringsecurity/common/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/logger/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logger/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-mappers/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-mappers/MenuMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/dao/MenuDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/dao/MenuDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/service/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/service/MenuService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/controller/AuthController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/admin/service/impl/MenuServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/common/config/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/common/config/WebMvcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/common/exceptionhandler/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/common/exceptionhandler/MyException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/common/utils/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/common/utils/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/common/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bobo/myspringsecurity/common/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/logger/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logger/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-mappers/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-mappers/MenuMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +167,15 @@
       <workItem from="1633921449550" duration="11032000" />
       <workItem from="1633934558006" duration="5728000" />
       <workItem from="1633940454897" duration="12512000" />
+      <workItem from="1634020686504" duration="141000" />
+      <workItem from="1634020840732" duration="32000" />
+      <workItem from="1634020885803" duration="186000" />
+      <workItem from="1634021084087" duration="3646000" />
+      <workItem from="1634026309765" duration="2000" />
+      <workItem from="1634027079477" duration="622000" />
+      <workItem from="1634027927950" duration="55000" />
+      <workItem from="1634028208406" duration="686000" />
+      <workItem from="1634028907424" duration="20000" />
     </task>
     <servers />
   </component>

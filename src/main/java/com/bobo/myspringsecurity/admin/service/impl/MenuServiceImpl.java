@@ -85,7 +85,6 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public List<MenuIndexDto> getMenu(Integer userId) {
         List<MenuIndexDto> list = menuDao.listByUserId(userId);
-        System.out.println(list);
         List<MenuIndexDto> result = TreeUtil.parseMenuTree(list);
         return result;
     }

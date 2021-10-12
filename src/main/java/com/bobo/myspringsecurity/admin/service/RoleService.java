@@ -2,7 +2,6 @@ package com.bobo.myspringsecurity.admin.service;
 
 import com.bobo.myspringsecurity.admin.dto.RoleDto;
 import com.bobo.myspringsecurity.admin.entity.MyRole;
-import io.swagger.models.auth.In;
 
 import java.util.List;
 

@@ -61,9 +61,10 @@ public class AuthController {
     @GetMapping(value = "api/index")
     @ResponseBody
     @ApiOperation(value = "通过用户id获取菜单")
-    public List<MenuIndexDto> getMenu() {
+    public Result getMenu() {
         JwtUserDto userDto = (JwtUserDto) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Integer userId = userDto.getMyUser().getUserId();
-        return menuService.getMenu(userId);
+        List<MenuIndexDto> menu = menuService.getMenu(userId);
+        return Result.ok().data("menus",menu);
     }
 }
